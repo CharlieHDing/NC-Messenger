@@ -43,7 +43,9 @@ class Login extends Component {
 
   onSubmit = (submitEvent) => {
     submitEvent.preventDefault();
-    navigate("/chat");
+    navigate("/chat", {
+      state: { username: this.state.username, url: this.state.url },
+    });
   };
 }
 
