@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
+import io from "socket.io-client";
 
 class Login extends Component {
   state = {
@@ -46,6 +47,7 @@ class Login extends Component {
     navigate("/chat", {
       state: { username: this.state.username, url: this.state.url },
     });
+    const socket = io.connect("http://localhost:5000");
   };
 }
 
